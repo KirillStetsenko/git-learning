@@ -1,0 +1,2 @@
+1. Create input.
+2. Creacte button 'add' to add task to list. 
