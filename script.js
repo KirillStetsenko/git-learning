@@ -1,9 +1,19 @@
-let tasks = ["clean my room", "learning", "walking"];
-
 let list = document.querySelector("#list");
+let input = document.querySelector("#addInput");
+let add = document.querySelector("#addButton");
 
-for (let task of tasks) {
-  let li = document.createElement("li");
-  li.textContent = task;
-  list.appendChild(li);
-}
+add.addEventListener("click", () => {
+  let task = document.createElement("li");
+  let del = document.createElement("button");
+
+  task.innerHTML = input.value;
+  del.textContent = "Delete";
+
+  del.addEventListener("click", () => {
+    task.remove();
+  });
+
+  list.appendChild(task);
+  task.appendChild(del);
+  input.value = "";
+});
