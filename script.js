@@ -1,19 +1,60 @@
-let list = document.querySelector("#list");
-let input = document.querySelector("#addInput");
-let add = document.querySelector("#addButton");
+let input = document.querySelector("#input");
+let ul = document.querySelector("#list");
+let counter = document.querySelector("#counter");
 
-add.addEventListener("click", () => {
-  let task = document.createElement("li");
-  let del = document.createElement("button");
+input.addEventListener("keypress", (event) => {
+  if (!input.value) {
+    return;
+  }
 
-  task.innerHTML = input.value;
-  del.textContent = "Delete";
+  if (event.key == "Enter") {
+    let li = document.createElement("li");
 
-  del.addEventListener("click", () => {
-    task.remove();
-  });
+    let task = document.createElement("span");
+    task.classList.add("taskStyle");
+    task.textContent = input.value;
 
-  list.appendChild(task);
-  task.appendChild(del);
-  input.value = "";
+    task.addEventListener("dblclick", function () {
+      let inp = document.createElement("input");
+      inp.value = task.textContent;
+      task.textContent = "";
+
+      inp.addEventListener("change", function () {
+        let editTask = document.createElement("span");
+        editTask.textContent = this.value;
+        inp.remove();
+        task.appendChild(editTask);
+      });
+
+      task.appendChild(inp);
+    });
+
+    li.appendChild(task);
+
+    let done = document.createElement("span");
+    done.classList.add("doneStyle");
+    done.textContent = " Done ";
+
+    done.addEventListener("click", () => {
+      task.classList.add("done");
+    });
+
+    li.appendChild(done);
+
+    let remove = document.createElement("span");
+    remove.classList.add("remove");
+    remove.textContent = " Remove ";
+
+    remove.addEventListener("click", () => {
+      li.remove();
+      counter.textContent = ul.children.length;
+    });
+    li.appendChild(remove);
+
+    ul.appendChild(li);
+
+    input.value = "";
+  }
+
+  counter.textContent = ul.children.length;
 });

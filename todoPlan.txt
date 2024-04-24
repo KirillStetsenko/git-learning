@@ -1,3 +1,0 @@
-1. Create input.
-2. Creacte button 'add' to add task to list.
-3. Add delete feature.
