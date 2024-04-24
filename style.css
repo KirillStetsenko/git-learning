@@ -2,4 +2,75 @@ h1 {
   color: blue;
 }
 
+body {
+  background-color: rgb(58, 58, 58);
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
 
+h1 {
+  position: relative;
+  left: -165px;
+  color: deepskyblue;
+  font-style: italic;
+}
+
+#wrapper {
+  border: 5px solid green;
+  border-radius: 68px;
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  align-items: center;
+  background-color: rgb(26, 26, 26);
+}
+
+.done {
+  text-decoration: line-through;
+  text-decoration-color: rgb(255, 0, 0);
+  text-decoration-thickness: 15px;
+}
+
+.doneStyle {
+  color: rgb(31, 71, 189);
+}
+
+.doneStyle:hover {
+  color: rgb(77, 77, 255);
+}
+
+li {
+  font-size: 40px;
+  list-style-type: none;
+}
+
+.remove {
+  color: rgb(177, 5, 5);
+}
+
+.remove:hover {
+  color: rgb(255, 3, 3);
+}
+
+.taskStyle {
+  color: gold;
+}
+
+input {
+  width: 500px;
+  height: 50px;
+  background-color: rgb(86, 85, 85);
+  font-size: 50px;
+  color: rgb(215, 212, 56);
+  font-family: Impact, "Arial Narrow Bold", sans-serif;
+  font-style: italic;
+}
+
+#counter {
+  font-size: 50px;
+  color: orange;
+}
+
+.counter {
+  font-size: 40px;
+  color: rgb(142, 26, 26);
+}

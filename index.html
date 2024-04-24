@@ -4,13 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link href="/style.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
   </head>
   <body>
-    <h1>To do list (v 1.1.0)</h1>
-    <input id="addInput" />
-    <button id="addButton">+</button>
-    <ol id="list"></ol>
-    <script src="/script.js"></script>
+    <div id="wrapper">
+      <h1>Checklist v 3.0.0</h1>
+      <input id="input" type="search" />
+      <ul id="list"></ul>
+      <p id="summary" class="counter">
+        You have <span id="counter">0</span> tasks to DO!
+      </p>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
